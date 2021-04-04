@@ -1,0 +1,8 @@
+.FlowerControls {
+    flex: 0 0 250px;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+  }
