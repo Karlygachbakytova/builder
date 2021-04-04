@@ -1,0 +1,18 @@
+.FlowerPreview {
+    flex: 0 0 400px;
+    height: 400px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+    background-color: #fcc067;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ingredients {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    position: relative;
+  }
