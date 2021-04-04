@@ -1,4 +1,3 @@
-                                                                                                                                                                                        import classes from "*.module.css";
 import classes from "./FlowerBuilder.module.css"
 import FlowerPreview from "./FlowerPreview/FlowerPreview";
 import FlowerControls from "./FlowerControls/FlowerControls";
