@@ -1,37 +1,37 @@
 
 import React from "react";
 
-import classes from "./PizzaIngredient.module.css";
-import salamiBackground from "../../../images/salami.svg";
-import tomatoBackground from "../../../images/tomato.svg";
-import blackOliveBackground from "../../../images/blackOlive.svg";
-import greenOliveBackground from "../../../images/greenOlive.svg";
-import redPepperBackground from "../../../images/redPepper.svg";
-import yellowPepperBackground from "../../../images/yellowPepper.svg";
+import classes from "./FlowerIngredient.module.css";
+import roseBackground from "../../../images/rose.svg";
+import lilyBackground from "../../../images/lily.svg";
+import orchidBackground from "../../../images/orchid.svg";
+import chamomileBackground from "../../../images/chamomile.svg";
+import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
-const PizzaIngredient = ({ type, fixed }) => {
+
+const FlowerIngredient = ({ type, fixed }) => {
   const types = {
-    salami: { backgroundImage: `url(${salamiBackground})`, width: "35px", height: "35px" },
-    tomato: { backgroundImage: `url(${tomatoBackground})`, width: "35px", height: "35px" },
-    blackOlive: { backgroundImage: `url(${blackOliveBackground})`, width: "10px", height: "10px" },
-    greenOlive: { backgroundImage: `url(${greenOliveBackground})`, width: "10px", height: "10px" },
-    redPepper: { backgroundImage: `url(${redPepperBackground})`, width: "20px", height: "20px" },
-    yellowPepper: { backgroundImage: `url(${yellowPepperBackground})`, width: "40px", height: "40px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
+    lily: { backgroundImage: `url(${lilyBackground})`, width: "35px", height: "35px" },
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "10px", height: "10px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "10px", height: "10px" },
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "20px", height: "20px" },
+   
   };
 
   function getPosition(ingredientWidth) {
-    const pizzaDiameter = 380;
-    const pizzaRadius = pizzaDiameter / 2;
+    const flowerDiameter = 380;
+    const flowerRadius = flowerDiameter / 2;
     const ingredientRadius = parseInt(ingredientWidth) / 2;
 
-    const ingredientTop = Math.round(Math.random() * pizzaDiameter);
-    const ingredientLeft = Math.round(Math.random() * pizzaDiameter);
+    const ingredientTop = Math.round(Math.random() * flowerDiameter);
+    const ingredientLeft = Math.round(Math.random() * flowerDiameter);
 
     const distance = Math.sqrt(
-      Math.pow(ingredientTop - pizzaRadius, 2) + Math.pow(ingredientLeft - pizzaRadius, 2)
+      Math.pow(ingredientTop - flowerRadius, 2) + Math.pow(ingredientLeft - flowerRadius, 2)
     ) + ingredientRadius;
 
-    return distance < pizzaRadius
+    return distance < flowerRadius
       ? {
         top: ingredientTop - ingredientRadius,
         left: ingredientLeft - ingredientRadius
@@ -49,8 +49,8 @@ const PizzaIngredient = ({ type, fixed }) => {
   types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
 
   return (
-    <div className={classes.PizzaIngredient} style={types[type]}></div>
+    <div className={classes.FlowerIngredient} style={types[type]}></div>
   );
 }
 
-export default React.memo(PizzaIngredient);
+export default React.memo(FlowerIngredient);
