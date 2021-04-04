@@ -1,3 +1,4 @@
+import FlowerIngredient from "../../FlowerIngredient/FlowerIngredient";
 import classes from "./FlowerControl.module.css";
 
 const FlowerControl = ({ type, addIngredient, removeIngredient }) => {
