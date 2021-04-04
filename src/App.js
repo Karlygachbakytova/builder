@@ -1,13 +1,15 @@
   
 import Layout from "./components/Layout/Layout";
 import "./App.css";
+import FlowerBuilder from "./components/FlowerBuilder/FlowerBuilder"
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        Pizza Builder by master Elaman Imashov
+        <FlowerBuilder />
       </Layout>
+
     </div>
   );
 }
