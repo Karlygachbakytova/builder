@@ -1,15 +1,16 @@
 import FlowerIngredient from "../../FlowerIngredient/FlowerIngredient";
 import classes from "./FlowerControl.module.css";
 
-const FlowerControl = ({ type, addIngredient, removeIngredient }) => {
-    return ( 
-        <div className = {classes.FlowerControl}>
-            <button onClick={()=> addIngredient(type)} >-</button>
-            <FlowerIngredient type={type}/>
-            <button  onClick={()=> removeIngredient(type)} >+</button>
-        </div>
-    );
+const  FlowerControl = ({ type, add, remove }) => {
+  return (
+    <div className={classes. FlowerControl}>
+      <button className={classes.more} onClick={() => add(type)}>+</button>
+      <div className={classes.ingredient}>
+        < FlowerIngredient type={type} fixed />
+      </div>
+      <button className={classes.less} onClick={() => remove(type)}>-</button>
+    </div>
+  );
 }
- 
-export default FlowerControl;
 
+export default  FlowerControl;

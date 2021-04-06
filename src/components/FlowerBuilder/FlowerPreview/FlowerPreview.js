@@ -3,7 +3,7 @@ import FlowerIngredient from "../FlowerIngredient/FlowerIngredient";
 import classes from "./FlowerPreview.module.css";
 
 
-const FlowerPreview = ({ ingredients }) => {
+const FlowerPreview = ({ ingredients, price}) => {
   const result = [];
   for (const ingredient in ingredients) {
     for (let i = 0; i < ingredients[ingredient]; i++) {
@@ -13,11 +13,14 @@ const FlowerPreview = ({ ingredients }) => {
 
   return (
     <div className={classes.FlowerPreview}>
-      <div
-        className={classes.ingredients}>
-        
-        {result}
+      <div className={classes.pizza}>
+        <div
+          className={classes.ingredients}
+          >
+          {result}
+        </div>
       </div>
+      <div className={classes.price}>{price} som</div>
     </div>
   );
 }
