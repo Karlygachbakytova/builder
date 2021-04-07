@@ -20,16 +20,16 @@ const FlowerBuilder = () => {
         chamomile: 3,
         chrysanthemum: 3,
       });
-      
+      const [ingredients, setIngredients] = useState({});
+      const [price, setPrice] = useState(0);
 
-useEffect (function()  {
+useEffect (() =>
     axios.get('https://builder-fd7e5-default-rtdb.firebaseio.com/ingredients.json')
-    .then (response => {
-        setIngredients({ ...response.data});
+    .then(response => {
+        setPrice(response.data.price);
+        setIngredients(response.data.ingredients);
       })
-  }, []);
-
-  const [price, setPrice] = useState(150);
+  );
 
   function addIngredient(type) {
     const newIngredients = { ...ingredients };
@@ -42,19 +42,22 @@ useEffect (function()  {
     if (ingredients[type]) {
       const newIngredients = { ...ingredients };
       newIngredients[type]--;
+      setPrice(price - prices[type]);
       setIngredients(newIngredients);
     }
   }
 
   return (
     <div className={classes.FlowerBuilder}>
-    <FlowerPreview price={price} ingredients={ingredients} />
-    <FlowerControls
-      ingredients={ingredients}
-      addIngredient={addIngredient}
-      removeIngredient={removeIngredient}
-      />
-  </div>
+      <FlowerPreview
+        ingredients={ingredients}
+        price={price} />
+      <FlowerControls
+        ingredients={ingredients}
+        addIngredient={addIngredient}
+        removeIngredient={removeIngredient}
+        />
+    </div>
   );
 }
 
