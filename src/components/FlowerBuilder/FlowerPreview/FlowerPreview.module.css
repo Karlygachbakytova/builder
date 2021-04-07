@@ -1,9 +1,8 @@
 .PizzaPreview {
   flex: 0 0 400px;
-  text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-flow: row wrap;
 }
 
 .pizza {
@@ -13,10 +12,10 @@
   margin-bottom: 1rem;
   border-radius: 100%;
   background-color: #fcc067;
+
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 .ingredients {
   width: 380px;
@@ -25,11 +24,11 @@
   position: relative;
 }
 .price {
-  font-size: 1.5rem;
-  color: white;
   background-color: tomato;
   border-radius: 1rem;
   padding: 0 1rem;
-  display: inline-block;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
   width: 150px;
 }

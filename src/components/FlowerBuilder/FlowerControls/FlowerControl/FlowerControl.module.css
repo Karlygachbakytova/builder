@@ -1,28 +1,28 @@
 .FlowerControl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: .5rem 0;
-  }
-  .FlowerControl .ingredient div {
-    position: static;
-    margin: 0 .5rem;
-  }
-  .FlowerControl button {
-    border: 0;
-    margin: 0 .5rem;
-    border-radius: 100%;
-    width: 2rem;
-    height: 2rem;
-    background-color: rgb(255, 152, 133);
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .FlowerControl button:hover {
-    background-color: rgb(172, 26, 0);
-  }
-  .FlowerControl button:focus {
-    outline: none;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5rem 0;
+}
+.FlowerControl .ingredient div {
+  position: static;
+  margin: 0 .5rem;
+}
+.FlowerControl button {
+  border: 0;
+  margin: 0 .5rem;
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(255, 152, 133);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.FlowerControl button:hover {
+  background-color: rgb(172, 26, 0);
+}
+.FlowerControl button:focus {
+  outline: none;
+}
