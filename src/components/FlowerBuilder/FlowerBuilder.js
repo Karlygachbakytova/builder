@@ -13,18 +13,12 @@ const FlowerBuilder = () => {
         chamomile: 15,
         chrysanthemum: 35,
       };
-      const [ingredients, setIngredients] = useState({
-        rose: 3,
-        lily: 3,
-        orchid: 3,
-        chamomile: 3,
-        chrysanthemum: 3,
-      });
+    
       const [ingredients, setIngredients] = useState({});
       const [price, setPrice] = useState(0);
 
 useEffect (() =>
-    axios.get('https://builder-fd7e5-default-rtdb.firebaseio.com/ingredients.json')
+    axios.get('https://builder-fd7e5-default-rtdb.firebaseio.com/default.json')
     .then(response => {
         setPrice(response.data.price);
         setIngredients(response.data.ingredients);
