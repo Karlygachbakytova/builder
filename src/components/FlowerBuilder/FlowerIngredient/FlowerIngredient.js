@@ -13,7 +13,7 @@ const FlowerIngredient = ({ type, fixed }) => {
   const types = {
     rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
     lily: { backgroundImage: `url(${lilyBackground})`, width: "35px", height: "35px" },
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "10px", height: "10px" },
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "50px", height: "50px" },
     chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "10px", height: "10px" },
     chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "20px", height: "20px" },
    
