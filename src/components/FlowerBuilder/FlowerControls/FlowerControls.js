@@ -1,7 +1,13 @@
+import Button from "../../UI/Button/Button";
 import FlowerControl from "./FlowerControl/FlowerControl";
-import classes from "./FlowerControls.module.css";
+import classes from "./FlowerControls.module.css"
 
-const FlowerControls = ({ ingredients, addIngredient, removeIngredient }) => {
+const FlowerControls  = ({
+  ingredients,
+  addIngredient,
+  removeIngredient,
+  startOrdering
+}) => {
   const results = [];
   let total = 0;
   for (const ingredient in ingredients) {
@@ -12,6 +18,7 @@ const FlowerControls = ({ ingredients, addIngredient, removeIngredient }) => {
         key={ingredient}
         add={addIngredient}
         remove={removeIngredient}
+        count={ingredients[ingredient]}
         type={ingredient} />)
   }
 
@@ -19,8 +26,8 @@ const FlowerControls = ({ ingredients, addIngredient, removeIngredient }) => {
     <div className={classes.FlowerControls}>
     <strong>Ingredients</strong>
     {results}
-    <button disabled={!total}>Order</button>
-  </div>
+    <Button disabled={!total} onClick={startOrdering}>Order</Button>
+    </div>
 );
 }
 

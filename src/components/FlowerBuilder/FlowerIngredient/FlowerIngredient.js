@@ -3,6 +3,7 @@ import React from "react";
 
 import classes from "./FlowerIngredient.module.css";
 import roseBackground from "../../../images/rose.svg";
+import bromeliadBackground from "../../../images/bromeliad.svg";
 import lilyBackground from "../../../images/lily.svg";
 import orchidBackground from "../../../images/orchid.svg";
 import chamomileBackground from "../../../images/chamomile.svg";
@@ -11,12 +12,12 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
 const FlowerIngredient = ({ type, fixed }) => {
   const types = {
-    rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
+    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "35px", height: "35px" },
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "35px", height: "35px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "35px", height: "35px" },
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "35px", height: "35px" },
     lily: { backgroundImage: `url(${lilyBackground})`, width: "35px", height: "35px" },
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "50px", height: "50px" },
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "10px", height: "10px" },
-    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "20px", height: "20px" },
-   
+    rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
   };
 
   function getPosition(ingredientWidth) {

@@ -13,7 +13,7 @@ const FlowerPreview = ({ ingredients, price}) => {
 
   return (
     <div className={classes.FlowerPreview}>
-      <div className={classes.pizza}>
+      <div className={classes.flower}>
         <div
           className={classes.ingredients}
           >

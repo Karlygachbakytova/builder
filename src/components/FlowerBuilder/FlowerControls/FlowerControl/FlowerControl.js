@@ -1,14 +1,15 @@
+import Button from "../../../UI/Button/Button";
 import FlowerIngredient from "../../FlowerIngredient/FlowerIngredient";
 import classes from "./FlowerControl.module.css";
 
-const  FlowerControl = ({ type, add, remove }) => {
+const  FlowerControl = ({ type, add, remove, count }) => {
   return (
     <div className={classes. FlowerControl}>
-      <button className={classes.more} onClick={() => add(type)}>+</button>
+        <Button onClick={() => add(type)}>+</Button>
       <div className={classes.ingredient}>
         < FlowerIngredient type={type} fixed />
-      </div>
-      <button className={classes.less} onClick={() => remove(type)}>-</button>
+        </div>
+      <Button onClick={() => remove(type)} disabled={!count}>-</Button>
     </div>
   );
 }
