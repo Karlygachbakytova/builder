@@ -2,6 +2,7 @@ import classes from "./OrderSummary.module.css";
 
 const OrderSummary = ({ ingredients, price }) => {
   const labels = {
+    bromeliad: "Bromeliad",
     rose: "Rose",
    lily: "Lily",
     orchid: "Orchid",
