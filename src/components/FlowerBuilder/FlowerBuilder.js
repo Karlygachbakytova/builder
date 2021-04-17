@@ -85,7 +85,7 @@ const FlowerBuilder = () => {
         />
      <Modal
         show={ordering}
-        cancel={stopOrdering}>Hello
+        cancel={stopOrdering}>
           <OrderSummary
             ingredients={ingredients}
             price={price}
