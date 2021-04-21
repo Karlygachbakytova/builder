@@ -4,7 +4,7 @@ import classes from "./FlowerControl.module.css";
 
 const  FlowerControl = ({ type, add, remove, count }) => {
   return (
-    <div className={classes. FlowerControl}>
+    <div className={classes.FlowerControl}>
         <Button onClick={() => add(type)}>+</Button>
       <div className={classes.ingredient}>
         < FlowerIngredient type={type} fixed />
