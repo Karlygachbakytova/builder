@@ -10,8 +10,8 @@
   height: 400px;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  border-radius: 100% rgb(211, 100, 192) ;
-  background-color: white;
+  border-radius: 100%;
+  background-color: #fcc067;
 
   display: flex;
   justify-content: center;
