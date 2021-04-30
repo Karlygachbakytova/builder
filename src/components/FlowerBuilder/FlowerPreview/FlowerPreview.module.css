@@ -21,7 +21,7 @@
   width: 380px;
   height: 380px;
   border-radius: 100%;
-  position: relative;
+  position: absolute;
 }
 .price {
   background-color:rgb(211, 100, 192);

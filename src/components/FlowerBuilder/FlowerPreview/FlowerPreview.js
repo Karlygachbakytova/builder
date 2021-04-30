@@ -1,5 +1,4 @@
 import FlowerIngredient from "../FlowerIngredient/FlowerIngredient";
-
 import classes from "./FlowerPreview.module.css";
 
 
