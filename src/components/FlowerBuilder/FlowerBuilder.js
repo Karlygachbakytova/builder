@@ -8,7 +8,7 @@ import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 
-const FlowerBuilder = () => {
+const FlowerBuilder = ({ history }) => {
     const prices = {
         rose: 75,
         lily: 50,
@@ -23,6 +23,7 @@ const FlowerBuilder = () => {
       const [ordering, setOrdering] = useState(false);
 
       useEffect(loadDefaults, []);
+      
     
       function loadDefaults() {
         axios
@@ -69,6 +70,7 @@ const FlowerBuilder = () => {
       .then(() => {
         setOrdering(false);
         loadDefaults();
+        history.push('/checkout');
       });
   }
 
