@@ -1,4 +1,3 @@
-  
 import Layout from "./components/Layout/Layout";
 import "./App.css";
 import FlowerBuilder from "./components/FlowerBuilder/FlowerBuilder"
@@ -12,6 +11,7 @@ function App() {
       <Layout>
       <Switch>
           <Route path="/" component={FlowerBuilder} exact />
+          <Route path="/checkout" component={Checkout} />
           <Route path="/orders" component={Orders} />
           <Redirect to="/" />
         </Switch>

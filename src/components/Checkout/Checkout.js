@@ -1,9 +1,14 @@
 import FlowerPreview from "../FlowerBuilder/FlowerPreview/FlowerPreview";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
-import axios from "axios";
-import classes from "./Checkout.module.css"
+import classes from "./Checkout.module.css";
+import axios from "../../axios";
+import { useSelector } from "react-redux";
+import withAxios from "../withAxios";
 
 const Checkout = ({ history }) => {
+  const ingredients = useSelector(state => state.builder.ingredients);
+  const price = useSelector(state => state.builder.price);
+
   function cancelCallback() {
     history.replace('/');
   }
@@ -11,19 +16,12 @@ const Checkout = ({ history }) => {
   function submitCallback(event) {
     const data = new FormData(event.target);
 
-    axios.post('https://builder-fd7e5-default-rtdb.firebaseio.com/default/orders.json', {
+    axios.post('https://builder-fd7e5-default-rtdb.firebaseio.com/orders.json', {
       name: data.get('name'),
       address: data.get('address'),
       phone: data.get('phone'),
-      ingredients: {
-        rose: 10,
-        chamomile: 10,
-        bromeliad: 10,
-        orchid: 10,
-        chrysanthemum: 10,
-        lily: 10,
-      },
-      price: 100,
+      ingredients: ingredients,
+      price: price,
     }).then(response => {
       history.replace('/');
     });
@@ -31,18 +29,16 @@ const Checkout = ({ history }) => {
     event.preventDefault();
   }
 
+
     return (
       <div className={classes.Checkout}>
-        <FlowerPreview ingredients={{
-          rose: 5, 
-         orchid: 10,
-         chamomile: 50,
-        }} price={1500} />
-        <CheckoutForm
+      <FlowerPreview ingredients={ingredients} price={price} />
+      <CheckoutForm
         cancelCallback={cancelCallback}
         submitCallback={submitCallback} />
-      </div>
-    );
-  }
+    </div>
+  );
+}
+ 
   
   export default Checkout; 
