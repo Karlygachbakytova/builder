@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware,  combineReducers } from 'redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
  import { BrowserRouter } from 'react-router-dom'
- import builderReducer from './store/builderReducer';
+import thunk from 'redux-thunk';
+import builder from './store/reducers/builder';
+import orders from './store/reducers/orders';
 
- const store = createStore(builderReducer);
+const rootReducer = combineReducers({ builder, orders });
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
