@@ -12,12 +12,12 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
 const FlowerIngredient = ({ type, fixed }) => {
   const types = {
-    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "35px", height: "35px" },
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "35px", height: "35px" },
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "35px", height: "35px" },
-    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "35px", height: "35px" },
-    lily: { backgroundImage: `url(${lilyBackground})`, width: "35px", height: "35px" },
-    rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
+    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "70px", height: "70px" },
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "70px", height: "70px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "70px", height: "70px" },
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "70px", height: "70px" },
+    lily: { backgroundImage: `url(${lilyBackground})`, width: "70px", height: "70px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "70px", height: "70px" },
   };
 
   function getPosition(ingredientWidth) {

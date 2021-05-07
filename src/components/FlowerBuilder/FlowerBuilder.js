@@ -3,52 +3,43 @@ import FlowerControls from "./FlowerControls/FlowerControls";
 
 import classes from "./FlowerBuilder.module.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { load } from "../../store/actions/builder";
+import withAxios from "../withAxios";
 
 const FlowerBuilder = ({ history }) => {
-    const prices = {
-        rose: 75,
-        lily: 50,
-        orchid: 40,
-        chamomile: 15,
-        chrysanthemum: 35,
-        bromeliad: 45,
-      };
-    
-      const [ingredients, setIngredients] = useState({});
-      const [price, setPrice] = useState(0);
+  
+      const dispatch = useDispatch();
+      const ingredients = useSelector(state => state.builder.ingredients);
+  const price = useSelector(state => state.builder.price);
       const [ordering, setOrdering] = useState(false);
 
-      useEffect(loadDefaults, []);
+      useEffect(() => dispatch(load()), []);
       
     
-      function loadDefaults() {
-        axios
-          .get('https://builder-fd7e5-default-rtdb.firebaseio.com/default.json')
-          .then(response => {
-            setPrice(response.data.price);
-            setIngredients(response.data.ingredients);
-          });
-      }
+      // function loadDefaults() {
+      //   axios
+      //     .get('https://builder-fd7e5-default-rtdb.firebaseio.com/default.json')
+      //     .then(response => {
+      //       setPrice(response.data.price);
+      //       setIngredients(response.data.ingredients);
+      //     });
+      // }
+  //       // For arrays
+  //       // setIngredients(Object.values(response.data.ingredients));
+  //       // For objects
+  //       setIngredients(response.data.ingredients);
+  //     });
+  // }
 
-  function addIngredient(type) {
-    const newIngredients = { ...ingredients };
-    newIngredients[type]++;
-    setPrice(price + prices[type]);
-    setIngredients(newIngredients);
-  }
+ 
 
-  function removeIngredient(type) {
-    if (ingredients[type]) {
-      const newIngredients = { ...ingredients };
-      newIngredients[type]--;
-      setPrice(price - prices[type]);
-      setIngredients(newIngredients);
-    }
-  }
+
+
 
   function startOrdering() {
     setOrdering(true);
@@ -57,22 +48,13 @@ const FlowerBuilder = ({ history }) => {
   function stopOrdering() {
     setOrdering(false);
   }
+
   function finishOrdering() {
     setOrdering(false);
-    axios
-      .post('https://builder-fd7e5-default-rtdb.firebaseio.com/default.json', {
-        ingredients: ingredients,
-        price: price,
-        address: "1234 Jusaeva str",
-        phone: "0 777 777 777",
-        name: "Sadyr Japarov",
-      })
-      .then(() => {
-        setOrdering(false);
-        loadDefaults();
-        history.push('/checkout');
-      });
+    // loadDefaults();
+    history.push('/checkout');
   }
+
 
   return (
     <div className={classes.FlowerBuilder}>
@@ -81,8 +63,6 @@ const FlowerBuilder = ({ history }) => {
         price={price} />
       <FlowerControls
         ingredients={ingredients}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
         startOrdering={startOrdering}
         />
      <Modal
@@ -99,4 +79,4 @@ const FlowerBuilder = ({ history }) => {
   );
 }
 
-export default FlowerBuilder;
+export default withAxios(PizzaBuilder, axios);

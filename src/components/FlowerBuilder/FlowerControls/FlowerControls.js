@@ -4,8 +4,6 @@ import classes from "./FlowerControls.module.css"
 
 const FlowerControls = ({
     ingredients,
-    addIngredient,
-    removeIngredient,
     startOrdering
 }) => {
     const results = [];
@@ -16,8 +14,6 @@ const FlowerControls = ({
     // Render pizza control for this ingredient
     results.push(<FlowerControl
         key={ingredient}
-        add={addIngredient}
-        remove={removeIngredient}
         count={ingredients[ingredient]}
         type={ingredient} />)   
     }
