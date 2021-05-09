@@ -16,7 +16,8 @@ const Checkout = ({ history }) => {
   function submitCallback(event) {
     const data = new FormData(event.target);
 
-    axios.post('https://builder-fd7e5-default-rtdb.firebaseio.com/orders.json', {
+ 
+    axios.post('/orders.json', {
       name: data.get('name'),
       address: data.get('address'),
       phone: data.get('phone'),
@@ -41,4 +42,4 @@ const Checkout = ({ history }) => {
 }
  
   
-  export default Checkout; 
+export default withAxios(Checkout, axios);

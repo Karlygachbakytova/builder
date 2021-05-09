@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import { SET_ORDERS } from "./types";
 
 export const set = (orders) => ({
@@ -7,7 +7,7 @@ export const set = (orders) => ({
 });
 
 export const load = () => {
-  return (dispatch) => axios.get('https://builder-fd7e5-default-rtdb.firebaseio.com/orders.json')
+  return (dispatch) => axios.get('/orders.json')
     .then(response => {
       const newOrders = Object.keys(response.data).map(id => {
         return {
@@ -17,4 +17,4 @@ export const load = () => {
       });
       dispatch(set(newOrders));
     });
-} 
+}
