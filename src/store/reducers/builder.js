@@ -7,15 +7,14 @@ const initialState = {
   price: 0,
 };
 const prices = {
-    rose: 75,
-    lily: 50,
-    orchid: 40,
-    chamomile: 15,
-    chrysanthemum: 35,
-    bromeliad: 45,
-  };
+  tomato: 3.5,
+  salami: 4,
+  greenOlive: .3,
+  blackOlive: .3,
+  redPepper: 2,
+  yellowPepper: 1,
+};
 
-  
 const builder = (state = initialState, action) => {
   const newState = { ...state };
 

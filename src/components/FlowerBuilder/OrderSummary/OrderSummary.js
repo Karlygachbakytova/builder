@@ -4,7 +4,7 @@ const OrderSummary = ({ ingredients, price }) => {
   const labels = {
     bromeliad: "Bromeliad",
     rose: "Rose",
-   lily: "Lily",
+    lily: "Lily",
     orchid: "Orchid",
     chamomile: "Chamomile",
     chrysanthemum: "Chrysanthemum",

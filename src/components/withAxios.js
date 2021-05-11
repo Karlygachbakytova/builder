@@ -41,4 +41,4 @@ const withAxios = (WrappedComponent, axios) => {
   }
 }
 
-export default withAxios; 
+export default withAxios;

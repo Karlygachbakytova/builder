@@ -6,13 +6,14 @@ import { add, remove } from "../../../../store/actions/builder";
 
 const  FlowerControl = ({ type, count }) => {
 const dispatch = useDispatch();
+
   return (
     <div className={classes.FlowerControl}>
          <Button onClick={() => dispatch(add(type))}>+</Button>
       <div className={classes.ingredient}>
         < FlowerIngredient type={type} fixed />
         </div>
-        <Button onClick={() => dispatch(remove(type))}>-</Button>
+        <Button onClick={() => dispatch(remove(type))} disabled={!count}>-</Button>
     </div>
   );
 }
