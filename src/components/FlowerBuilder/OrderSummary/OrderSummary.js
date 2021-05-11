@@ -11,7 +11,7 @@ const OrderSummary = ({ ingredients, price }) => {
     
   }
   const results = Object.keys(ingredients)
-    .map(type => <li>{labels[type]}: {ingredients[type]}</li>);
+  .map(type => <li key={type}>{labels[type]}: {ingredients[type]}</li>);
 
   return (
     <div className={classes.OrderSummary}>
