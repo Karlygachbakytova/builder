@@ -1,27 +1,16 @@
-  
-import axios from "../../../axios"
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { load } from "../../store/actions/orders";
-import Order from "./Order/Order";
-import classes from "./Orders.module.css";
-import withAxios from "../withAxios";
+import classes from "./Order.module.css";
 
-const Orders = () => {
-  const dispatch = useDispatch();
-  const orders = useSelector(state => state.orders);
-
-  useEffect(() => {
-    dispatch(load());
-  }, []);
-
-  const results = orders.map(order => <Order key={order.id} {...order} />);
+const Order = ({ name, phone, address, ingredients, price }) => {
+  const outputIngredients = Object.keys(ingredients)
+    .map(ingredient => <em>{ingredient} - {ingredients[ingredient]}</em>);
 
   return (
-    <div className={classes.Orders}>
-      {results}
+    <div className={classes.Order}>
+      <div>{name}, {phone}, {address}</div>
+      <div>{outputIngredients}</div>
+      <strong>{price}</strong>
     </div>
   );
 }
 
-export default withAxios(Orders, axios);
+export default Order;
