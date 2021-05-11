@@ -12,11 +12,10 @@ import { load } from "../../store/actions/builder";
 import withAxios from "../withAxios";
 
 const FlowerBuilder = ({ history }) => {
-  
-      const dispatch = useDispatch();
-      const ingredients = useSelector(state => state.builder.ingredients);
+  const dispatch = useDispatch();
+  const ingredients = useSelector(state => state.builder.ingredients);
   const price = useSelector(state => state.builder.price);
-      const [ordering, setOrdering] = useState(false);
+  const [ordering, setOrdering] = useState(false);
 
       useEffect(() => dispatch(load()), []);
       
@@ -35,10 +34,6 @@ const FlowerBuilder = ({ history }) => {
   //       setIngredients(response.data.ingredients);
   //     });
   // }
-
- 
-
-
 
 
   function startOrdering() {
