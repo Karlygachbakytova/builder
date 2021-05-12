@@ -4,15 +4,15 @@ import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "../actions/t
 const initialState = {
   ingredients: {
   },
-  price: 0,
+  price: 200,
 };
 const prices = {
-  tomato: 3.5,
-  salami: 4,
-  greenOlive: .3,
-  blackOlive: .3,
-  redPepper: 2,
-  yellowPepper: 1,
+  bromeliad: 3,
+  chamomile: 3,
+  chrysanthemum: .3,
+  lily: .3,
+  orchid: 3,
+  rose: 3,
 };
 
 const builder = (state = initialState, action) => {
