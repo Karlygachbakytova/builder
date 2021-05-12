@@ -12,12 +12,12 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
 const FlowerIngredient = ({ type, fixed }) => {
   const types = {
-    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "70px", height: "70px" },
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "70px", height: "70px" },
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "70px", height: "70px" },
-    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "70px", height: "70px" },
-    lily: { backgroundImage: `url(${lilyBackground})`, width: "70px", height: "70px" },
-    rose: { backgroundImage: `url(${roseBackground})`, width: "70px", height: "70px" },
+    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "63px", height: "130px" },
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "63px", height: "130px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "63px", height: "130px" },
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "63px", height: "130px" },
+    lily: { backgroundImage: `url(${lilyBackground})`, width: "63px", height: "130px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "63px", height: "130px" },
   };
 
   function getPosition(ingredientWidth) {
@@ -46,8 +46,12 @@ const FlowerIngredient = ({ type, fixed }) => {
     types[type].top = position.top + "px";
     types[type].left = position.left + "px";
   }
+  else {
+    types[type].width = "40px";
+    types[type].height = "80px";
+  }
   // Get random rotation for this ingredient.
-  types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
+
 
   return (
     <div className={classes.FlowerIngredient} style={types[type]}></div>
