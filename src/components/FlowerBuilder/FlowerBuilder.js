@@ -19,21 +19,6 @@ const FlowerBuilder = ({ history }) => {
 
       useEffect(() => dispatch(load()), [ dispatch ]);
       
-    
-      // function loadDefaults() {
-      //   axios
-      //     .get('https://builder-fd7e5-default-rtdb.firebaseio.com/default.json')
-      //     .then(response => {
-      //       setPrice(response.data.price);
-      //       setIngredients(response.data.ingredients);
-      //     });
-      // }
-  //       // For arrays
-  //       // setIngredients(Object.values(response.data.ingredients));
-  //       // For objects
-  //       setIngredients(response.data.ingredients);
-  //     });
-  // }
 
 
   function startOrdering() {
