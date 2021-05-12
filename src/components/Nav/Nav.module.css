@@ -6,7 +6,7 @@
     font-size: 40px;
   }
   
-  @media (max-width: 549px) {
+  @media (max-width: 649px) {
     .Nav {
       flex-direction: column;
     }

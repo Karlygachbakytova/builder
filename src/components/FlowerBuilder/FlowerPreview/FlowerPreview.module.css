@@ -6,8 +6,8 @@
   justify-content: center;
 }
 .flower {
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   margin-right: 1rem;
   margin-bottom: 1rem;
   border-radius: 100% ;
@@ -30,4 +30,10 @@
   font-size: 1.5rem;
   color: white;
   font-weight: bold;
+}
+@media (max-width: 649px) {
+  .flower{
+    width: 400px;
+    height: 400px;
+  }
 }
