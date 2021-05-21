@@ -11,13 +11,14 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
 
 const FlowerIngredient = ({ type, fixed }) => {
+  let rotateNum = Math.floor(Math.random() * (40 - -40 + 1)) + -40
   const types = {
-    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "100px", height: "220px" },
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "100px", height: "200px" },
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "100px", height: "200px" },
-    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "100px", height: "200px" },
-    lily: { backgroundImage: `url(${lilyBackground})`, width: "100px", height: "200px" },
-    rose: { backgroundImage: `url(${roseBackground})`, width: "100px", height: "200px" },
+    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
+    orchid: { backgroundImage: `url(${orchidBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
+    lily: { backgroundImage: `url(${lilyBackground})`, width: "150px", height: "300px",  transform: `rotate(${rotateNum}deg)`},
+    rose: { backgroundImage: `url(${roseBackground})`, width: "150px", height: "300px",  transform: `rotate(${rotateNum}deg)`},
   };
 
   function getPosition(ingredientWidth) {
@@ -34,8 +35,8 @@ const FlowerIngredient = ({ type, fixed }) => {
 
     return distance < flowerRadius
       ? {
-        top: ingredientTop - ingredientRadius,
-        left: ingredientLeft - ingredientRadius
+        // top: ingredientTop - ingredientRadius,
+        // left: ingredientLeft - ingredientRadius
       }
       : getPosition(ingredientWidth);
   }
@@ -47,8 +48,10 @@ const FlowerIngredient = ({ type, fixed }) => {
     types[type].left = position.left + "px";
   }
   else {
-    types[type].width = "50px";
-    types[type].height = "100px";
+    types[type].width = "70px";
+    types[type].height = "150px";
+    types[type].transform = "rotate(0deg)"
+    
   }
   // Get random rotation for this ingredient.
 

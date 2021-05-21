@@ -1,9 +1,10 @@
 .FlowerPreview {
   flex: 0 0 400px;
-  display: flex;
+display: flex;
   flex-wrap: wrap;
   margin-bottom: 1rem;
   justify-content: center;
+  align-content: center;
 
 }
 .flower {
@@ -30,6 +31,12 @@
   padding: 0 1rem;
   font-size: 1.5rem;
   color: white;
+  display: flex;
+  align-content: center;
+  justify-self: center;
+
+  width: 150px;
+  height: 40px;
   font-weight: bold;
 }
 @media (max-width: 649px) {

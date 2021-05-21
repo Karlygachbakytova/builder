@@ -9,7 +9,6 @@ import { Redirect, useLocation } from "react-router-dom";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
-  const [ method, setMethod ] = useState(null);
   const { loading, error, token } = useSelector(state => state.auth);
   const location = useLocation();
 
@@ -17,6 +16,8 @@ export default withAxios(() => {
     start(dispatch);
 
     const data = new FormData(event.target);
+    const method = event.nativeEvent.submitter.innerText == "Sign in"
+      ? "signin" : "signup";
     auth(dispatch, method, data.get('email'), data.get('password'));
 
     event.preventDefault();
@@ -29,8 +30,8 @@ export default withAxios(() => {
         <h1>Welcome</h1>
         <input type="email" placeholder="E-mail" name="email" required />
         <input type="password" placeholder="Password" name="password" required minLength="6" />
-        <Button click={() => setMethod('signin')} green>Sign in</Button>
-        <Button click={() => setMethod('signup')} red>Sign up</Button>
+        <Button>Sign in</Button>
+        <Button>Sign up</Button>
       </form>
     );
   }
@@ -53,4 +54,4 @@ export default withAxios(() => {
       {redirectOutput}
     </div>
   );
-}, axios); 
+}, axios);

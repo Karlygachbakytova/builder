@@ -58,4 +58,4 @@ export const auth = (dispatch, method, email, password) => axios
     success(dispatch, data);
     timeout(dispatch, +data.expiresIn);
   })
-  .catch(error => fail(dispatch, error)); 
+  .catch(error => fail(dispatch, error));

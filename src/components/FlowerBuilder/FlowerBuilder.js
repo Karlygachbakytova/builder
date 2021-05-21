@@ -13,6 +13,7 @@ import withAxios from "../withAxios";
 
 const FlowerBuilder = ({ history }) => {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
   const ingredients = useSelector(state => state.builder.ingredients);
   const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
@@ -21,9 +22,14 @@ const FlowerBuilder = ({ history }) => {
       
 
 
-  function startOrdering() {
-    setOrdering(true);
-  }
+      function startOrdering() {
+        if (isAuthenticated) {
+          setOrdering(true);
+        }
+        else {
+          history.push('/auth');
+        }
+      }
 
   function stopOrdering() {
     setOrdering(false);

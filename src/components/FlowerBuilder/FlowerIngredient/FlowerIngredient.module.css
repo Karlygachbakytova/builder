@@ -1,5 +1,5 @@
 .FlowerIngredient {
     position: absolute;
     background-size: cover;
-    
+    transform-origin: bottom;
   }

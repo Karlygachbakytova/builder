@@ -1,4 +1,4 @@
-import FlowerPreview from "../FlowerBuilder/FlowerPreview/FlowerPreview";
+import PizzaPreview from "../FlowerBuilder/FlowerPreview/FlowerPreview";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import classes from "./Checkout.module.css";
 import axios from "../../axios";
@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import withAxios from "../withAxios";
 
 const Checkout = ({ history }) => {
+  const { token, id } = useSelector(state => state.auth);
   const ingredients = useSelector(state => state.builder.ingredients);
   const price = useSelector(state => state.builder.price);
 
@@ -16,13 +17,13 @@ const Checkout = ({ history }) => {
   function submitCallback(event) {
     const data = new FormData(event.target);
 
- 
-    axios.post('/orders.json', {
+    axios.post('/orders.json?auth=' + token, {
       name: data.get('name'),
       address: data.get('address'),
       phone: data.get('phone'),
       ingredients: ingredients,
       price: price,
+      userId: id
     }).then(response => {
       history.replace('/');
     });
@@ -30,10 +31,9 @@ const Checkout = ({ history }) => {
     event.preventDefault();
   }
 
-
-    return (
-      <div className={classes.Checkout}>
-      <FlowerPreview ingredients={ingredients} price={price} />
+  return (
+    <div className={classes.Checkout}>
+      <PizzaPreview ingredients={ingredients} price={price} />
       <CheckoutForm
         cancelCallback={cancelCallback}
         submitCallback={submitCallback} />
@@ -41,5 +41,4 @@ const Checkout = ({ history }) => {
   );
 }
  
-  
 export default withAxios(Checkout, axios);
