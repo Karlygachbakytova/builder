@@ -1,7 +1,7 @@
 import FlowerPreview from "./FlowerPreview/FlowerPreview";
 import FlowerControls from "./FlowerControls/FlowerControls";
 
-import classes from "./BouquetBuilder.module.css";
+import classes from "./FlowerBuilder.module.css";
 import { useEffect, useState } from "react";
 import axios from "../../axios";
 import Modal from "../UI/Modal/Modal";
@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { load } from "../../store/actions/builder";
 import withAxios from "../withAxios";
 
-const BouquetBuilder = ({ history }) => {
+const FlowerBuilder = ({ history }) => {
   const dispatch = useDispatch();
   const ingredients = useSelector(state => state.builder.ingredients);
   const price = useSelector(state => state.builder.price);
@@ -59,4 +59,4 @@ const BouquetBuilder = ({ history }) => {
   );
 }
 
-export default withAxios(BouquetBuilder, axios);
+export default withAxios(FlowerBuilder, axios);
