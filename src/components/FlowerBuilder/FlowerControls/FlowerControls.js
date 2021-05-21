@@ -1,6 +1,6 @@
 import Button from "../../UI/Button/Button"
 import FlowerControl from "./FlowerControl/FlowerControl"
-import classes from "./Flowercontrols.module.css"
+import classes from "./FlowerControls.module.css"
 
 const FlowerControls = ({
     ingredients,
