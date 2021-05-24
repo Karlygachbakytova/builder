@@ -48,8 +48,8 @@ const FlowerIngredient = ({ type, fixed }) => {
     types[type].left = position.left + "px";
   }
   else {
-    types[type].width = "70px";
-    types[type].height = "150px";
+    types[type].width = "50px";
+    types[type].height = "90px";
     types[type].transform = "rotate(0deg)"
     
   }
