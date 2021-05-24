@@ -1,4 +1,4 @@
-import PizzaPreview from "../FlowerBuilder/FlowerPreview/FlowerPreview";
+import FlowerPreview from "../FlowerBuilder/FlowerPreview/FlowerPreview";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import classes from "./Checkout.module.css";
 import axios from "../../axios";
@@ -33,7 +33,7 @@ const Checkout = ({ history }) => {
 
   return (
     <div className={classes.Checkout}>
-      <PizzaPreview ingredients={ingredients} price={price} />
+      <FlowerPreview ingredients={ingredients} price={price} />
       <CheckoutForm
         cancelCallback={cancelCallback}
         submitCallback={submitCallback} />

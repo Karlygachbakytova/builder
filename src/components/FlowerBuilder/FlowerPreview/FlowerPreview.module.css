@@ -1,5 +1,5 @@
 .FlowerPreview {
-  flex: 0 0 400px;
+  flex: 0 0 100px;
 display: flex;
   flex-wrap: wrap;
   margin-bottom: 1rem;
@@ -8,22 +8,18 @@ display: flex;
 
 }
 .flower {
-  width: 600px;
-  height: 600px;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 100% ;
+  width: 450px;
+  height: 450px;
   background-color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .ingredients {
   width: 380px;
   height: 380px;
   border-radius: 100%;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .price {
   background-color:rgb(207, 94, 132);
@@ -31,17 +27,40 @@ display: flex;
   padding: 0 1rem;
   font-size: 1.5rem;
   color: white;
-  display: flex;
-  align-content: center;
-  justify-self: center;
+
 
   width: 150px;
   height: 40px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+align-content: center;
 }
 @media (max-width: 649px) {
   .flower{
+    width: 380px;
+    height: 380px;
+
+  }
+  .ingredients {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+}
+@media (max-width: 399px) {
+  .flower{
     width: 400px;
     height: 400px;
+
+  }}
+  @media (max-width: 600px) {
+    .flower{
+      width: 380px;
+      height: 380px;
+  
+    }
+
   }
-}
+

@@ -1,5 +1,4 @@
-  
-import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "../actions/types";
+import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "../actions/types"
 
 const initialState = {
   ingredients: {

@@ -11,7 +11,7 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 
 
 const FlowerIngredient = ({ type, fixed }) => {
-  let rotateNum = Math.floor(Math.random() * (40 - -40 + 1)) + -40
+  let rotateNum = Math.floor(Math.random() * (45 - -45 + 1)) + -45
   const types = {
     bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
     orchid: { backgroundImage: `url(${orchidBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
