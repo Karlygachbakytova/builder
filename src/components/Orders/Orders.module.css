@@ -1,5 +1,4 @@
 .Orders{
-    border: solid rgb(207, 94, 132) 3px;
-    padding: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
