@@ -55,10 +55,10 @@ align-content: center;
     height: 400px;
 
   }}
-  @media (max-width: 600px) {
+  @media (max-width: 849px) {
     .flower{
-      width: 380px;
-      height: 380px;
+      width: 400px;
+      height: 400px;
   
     }
 

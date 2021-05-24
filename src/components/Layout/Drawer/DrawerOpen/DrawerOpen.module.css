@@ -16,7 +16,7 @@
     margin-bottom: .5rem;
 }
 
-@media (min-width: 649px) {
+@media (min-width: 749px) {
     .DrawerOpen {
         display: none;
     }
