@@ -21,31 +21,31 @@ const FlowerIngredient = ({ type, fixed }) => {
     rose: { backgroundImage: `url(${roseBackground})`, width: "150px", height: "300px",  transform: `rotate(${rotateNum}deg)`},
   };
 
-  function getPosition(ingredientWidth) {
-    const flowerDiameter = 380;
-    const flowerRadius = flowerDiameter / 2;
-    const ingredientRadius = parseInt(ingredientWidth) / 2;
+  // function getPosition(ingredientWidth) {
+  //   const flowerDiameter = 380;
+  //   const flowerRadius = flowerDiameter / 2;
+  //   const ingredientRadius = parseInt(ingredientWidth) / 2;
 
-    const ingredientTop = Math.round(Math.random() * flowerDiameter);
-    const ingredientLeft = Math.round(Math.random() * flowerDiameter);
+  //   const ingredientTop = Math.round(Math.random() * flowerDiameter);
+  //   const ingredientLeft = Math.round(Math.random() * flowerDiameter);
 
-    const distance = Math.sqrt(
-      Math.pow(ingredientTop - flowerRadius, 2) + Math.pow(ingredientLeft - flowerRadius, 2)
-    ) + ingredientRadius;
+  //   const distance = Math.sqrt(
+  //     Math.pow(ingredientTop - flowerRadius, 2) + Math.pow(ingredientLeft - flowerRadius, 2)
+  //   ) + ingredientRadius;
 
-    return distance < flowerRadius
-      ? {
-        // top: ingredientTop - ingredientRadius,
-        // left: ingredientLeft - ingredientRadius
-      }
-      : getPosition(ingredientWidth);
-  }
+  //   return distance < flowerRadius
+  //     ? {
+  //       // top: ingredientTop - ingredientRadius,
+  //       // left: ingredientLeft - ingredientRadius
+  //     }
+  //     // : getPosition(ingredientWidth);
+  // }
 
   // Get random position for this ingredient.
   if (!fixed) {
-    const position = getPosition(types[type].width);
-    types[type].top = position.top + "px";
-    types[type].left = position.left + "px";
+    // const position = getPosition(types[type].width);
+    // types[type].top = position.top + "px";
+    // types[type].left = position.left + "px";
   }
   else {
     types[type].width = "50px";
