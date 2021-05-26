@@ -1,0 +1,13 @@
+.Order{
+    color: rgb(207, 94, 132);
+    margin: 2rem;
+    padding: 1rem;
+    width: 15rem;
+    font-size: 20px;
+    border: solid 1px ;
+    border-radius: 10px;
+  }
+  .strong{
+    color: rgb(207, 94, 132);
+    line-height: 25px;
+  }
