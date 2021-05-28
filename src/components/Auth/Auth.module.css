@@ -1,10 +1,10 @@
 .Auth {
-    color: rgb(207, 94, 132);
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin: 2rem 0;
-    flex-direction: column;
+  color: rgb(207, 94, 132);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 2rem 0;
+  flex-direction: column;
 
   }
 .Auth input{

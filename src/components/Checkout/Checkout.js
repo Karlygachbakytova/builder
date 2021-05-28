@@ -24,7 +24,7 @@ const Checkout = ({ history }) => {
         name: data.get("name"),
         address: data.get("address"),
         phone: data.get("phone"),
-      ingredients:ingredients,
+        ingredients:ingredients,
         price: price,
         userId: id,
       })

@@ -1,6 +1,5 @@
 import FlowerPreview from "./FlowerPreview/FlowerPreview";
 import FlowerControls from "./FlowerControls/FlowerControls";
-
 import classes from "./FlowerBuilder.module.css";
 import { useEffect, useState } from "react";
 import axios from "../../axios";
@@ -20,14 +19,12 @@ const FlowerBuilder = ({ history }) => {
 
       useEffect(() => dispatch(load()), [ dispatch ]);
       
-
-
-      function startOrdering() {
-        if (isAuthenticated) {
-          setOrdering(true);
+  function startOrdering() {
+    if (isAuthenticated) {
+     setOrdering(true);
         }
-        else {
-          history.push('/auth');
+    else {
+     history.push('/auth');
         }
       }
 
@@ -54,12 +51,12 @@ const FlowerBuilder = ({ history }) => {
      <Modal
         show={ordering}
         cancel={stopOrdering}>
-          <OrderSummary
+         <OrderSummary
             ingredients={ingredients}
             price={price}
             />
-             <Button onClick={finishOrdering} green="green">Checkout</Button>
-          <Button onClick={stopOrdering}>Cancel</Button>
+         <Button onClick={finishOrdering} green="green">Checkout</Button>
+         <Button onClick={stopOrdering}>Cancel</Button>
         </Modal>
     </div>
   );

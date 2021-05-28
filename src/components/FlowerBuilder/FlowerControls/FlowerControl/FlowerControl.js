@@ -9,7 +9,7 @@ const dispatch = useDispatch();
 
   return (
     <div className={classes.FlowerControl}>
-         <Button onClick={() => dispatch(add(type))}>+</Button>
+        <Button onClick={() => dispatch(add(type))}>+</Button>
       <div className={classes.ingredient}>
         < FlowerIngredient type={type} fixed />
         </div>

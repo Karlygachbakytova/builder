@@ -9,9 +9,8 @@ const FlowerControls = ({
     const results = [];
     let total = 0;
     for (const ingredient in ingredients) {
-         // Add ingredient number to totals number
     total += ingredients[ingredient];
-    // Render pizza control for this ingredient
+
     results.push(<FlowerControl
         key={ingredient}
         count={ingredients[ingredient]}
@@ -19,7 +18,7 @@ const FlowerControls = ({
     }
     return (
         <div className={classes.FlowerControls}>
-          <strong>Ingredients</strong>
+          <strong>Flowers</strong>
           {results}
           <Button disabled={!total} onClick={startOrdering}>Order</Button>
         </div>
