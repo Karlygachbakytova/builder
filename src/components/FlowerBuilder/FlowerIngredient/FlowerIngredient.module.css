@@ -2,4 +2,16 @@
     position: absolute;
     background-size: cover;
     transform-origin: bottom;
+    width: 150px;
+   height: 300px;
+   overflow: hidden;
   }
+@media (max-width:450px) {
+  .FlowerIngredient{
+    background-size: 100px;
+    width: 140px;
+    height: 250px;
+
+  }
+  
+}

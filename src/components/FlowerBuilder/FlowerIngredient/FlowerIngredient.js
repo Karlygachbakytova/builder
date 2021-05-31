@@ -13,12 +13,12 @@ import chrysanthemumBackground from "../../../images/chrysanthemum.svg";
 const FlowerIngredient = ({ type, fixed }) => {
   let rotateNum = Math.floor(Math.random() * (45 - -45 + 1)) + -45
   const types = {
-    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
-    orchid: { backgroundImage: `url(${orchidBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
-    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, width: "150px", height: "300px", transform: `rotate(${rotateNum}deg)`},
-    lily: { backgroundImage: `url(${lilyBackground})`, width: "150px", height: "300px",  transform: `rotate(${rotateNum}deg)`},
-    rose: { backgroundImage: `url(${roseBackground})`, width: "150px", height: "300px",  transform: `rotate(${rotateNum}deg)`},
+    bromeliad: { backgroundImage: `url(${bromeliadBackground})`, transform: `rotate(${rotateNum}deg)`},
+    orchid: { backgroundImage: `url(${orchidBackground})`, transform: `rotate(${rotateNum}deg)`},
+    chamomile: { backgroundImage: `url(${chamomileBackground})`,  transform: `rotate(${rotateNum}deg)`},
+    chrysanthemum: { backgroundImage: `url(${chrysanthemumBackground})`, transform: `rotate(${rotateNum}deg)`},
+    lily: { backgroundImage: `url(${lilyBackground})`,   transform: `rotate(${rotateNum}deg)`},
+    rose: { backgroundImage: `url(${roseBackground})`,  transform: `rotate(${rotateNum}deg)`},
   };
 
   // function getPosition(ingredientWidth) {

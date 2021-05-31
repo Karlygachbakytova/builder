@@ -35,7 +35,25 @@
   font-weight: bold;
   display: flex;
   justify-content: center;
-align-content: center;
+  align-content: center;
+}
+
+@media (max-width: 500px) {
+  .FlowerPreview{
+    width: 400px;
+    height: 300px;
+    margin-right: 0;
+  }
+  .flower{
+    width: 400px;
+    height: 300px;
+    
+  }
+  .ingredients{
+    width: 400px;
+    height: 300px;
+ 
+  }
 }
 
 

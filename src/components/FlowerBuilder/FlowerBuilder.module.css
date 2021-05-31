@@ -4,8 +4,12 @@
     flex-wrap: wrap;
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 450px) {
     .FlowerBuilder{
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      margin: 0 auto;
+
     }
   }
